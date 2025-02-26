@@ -41,7 +41,7 @@ function carregarContatos() {
         <p><strong>Nome:</strong> ${contato.nome}</p>
         <p><strong>Telefone:</strong> ${contato.telefone}</p>
         <p><strong>E-mail:</strong> ${contato.email}</p>
-        <button type="button" id="edit" onclick="editarContatoFormulario(${index})">Editar</button>
+        <button type="button" id="edit" onclick="editarContato(${index})">Editar</button>
         <button type="button" class="delete" onclick="removerContato(${index})">X</button>
     `;
 
@@ -49,20 +49,38 @@ function carregarContatos() {
   });
 }
 
-function editarContato() {
-    let contatos = JSON.parse(localStorage.getItem("contatos")) || [];
-    const contato = contatos[index]
+function editarContato(index) {
+  let contatos = JSON.parse(localStorage.getItem("contatos")) || [];
+  const contato = contatos[index];
 
-     document.getElementById("nome").valu = contato.nome
-   document.getElementById("telefone").value = contato.telefone;
-   document.getElementById("email").value = contato.email;
+  document.getElementById("nome").value = contato.nome;
+  document.getElementById("telefone").value = contato.telefone;
+  document.getElementById("email").value = contato.email;
+
+  const botao = document.getElementById("addContato");
+  botao.textContent = "Atualizar";
+  
+  
+  botao.replaceWith(botao.cloneNode(true));
+
+  document.getElementById("addContato").addEventListener("click", function atualizar() {
+    contatos[index] = {
+      nome: document.getElementById("nome").value,
+      telefone: document.getElementById("telefone").value,
+      email: document.getElementById("email").value
+    };
+
+    localStorage.setItem("contatos", JSON.stringify(contatos));
     
-   const botao = document.getElementById("edit")
+ 
+    botao.textContent = "Adicionar";
+    botao.replaceWith(botao.cloneNode(true));
+    document.getElementById("addContato").addEventListener("click", adicionarContato);
 
-   botao.textContent= 'atualizar'
-
-   botao.replaceWith(botao.cloneNode(true))
-  }
+    limparCampos();
+    carregarContatos();
+  }, { once: true }); 
+}
 
 function removerContato(index) {
   let contatos = JSON.parse(localStorage.getItem("contatos")) || [];
