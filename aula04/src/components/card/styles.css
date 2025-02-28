@@ -1,0 +1,100 @@
+/*
+Área de Título
+- div cardTitleContainer -> (
+- label (Para você decolar)
+- div titleAndPrice -> (
+- plan (Ultimate)
+- price (R$29,97/mês)
+))
+
+Botão
+- signNow (Assine agora)
+
+Lista de Benefícios
+- class benefitsList (Lista de Benefícios)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", serif;
+    color: white;
+}
+
+#cardBlack{
+    padding: 48px 0 0 32px;
+    align-items: center;
+}
+
+#principal{
+    display: flex;
+    gap: 76px;
+}
+
+#label{
+    font-size: 14px;
+    font-weight: 600;
+    color: #996DFF;
+}
+
+#titulo{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#preco{
+    font-size:18px;
+    font-weight: normal;
+}
+
+#preco{
+    padding-top: 8px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+hr{
+    background-color: #334155;
+    height: 1px;
+    width: 320px;
+    border: none;
+    margin-left: 32px;
+    margin-bottom: 32px;
+}
+
+.list li{
+    font-size: 16px;
+    font-weight: 400;
+    color: #CBD5E1;
+    list-style-type: none;
+    margin-left: 32px;
+    margin-bottom: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #superelipse {
+    color: black;
+  }
+  
+  .cardContainer {
+    width: 384px;
+    height: 454px;
+    background-color: #0f172a;
+    gap: 10px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .miniContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

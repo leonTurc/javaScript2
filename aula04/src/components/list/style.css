@@ -1,0 +1,8 @@
+.list li{
+    font-size: 16px;
+    font-weight: 400;
+    color: #CBD5E1;
+    list-style-type: none;
+    margin-left: 32px;
+    margin-bottom: 10px;
+}
