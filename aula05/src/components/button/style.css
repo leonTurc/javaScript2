@@ -1,6 +1,82 @@
-#maisMenos{
+#btns {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
 }
-#btns{
+
+#btns #valor {
+    color: #574f4d;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 4px 0px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: right;
+
+}
+
+#btns #valor #val2 {
+    font-family: "Baloo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0%;
+}
+
+#btns #maisMenos {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 72px;
+    height: 38px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #e6e5e5;
+}
+
+#btns #maisMenos .butao {
+    border: none;
+    background-color: transparent;
+    color: #8047f8;
+}
+
+#btns #maisMenos .butao:hover {
+    border-radius: 100px;
+    background-color: rgb(211, 211, 211);
+}
+
+#btns #maisMenos p {
+    width: 21px;
+    height: 21px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+}
+
+#btns #compra {
+    background-color: #4b2995;
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    padding: 8px;
+    gap: 8px;
+    color: #f3f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+#btns #compra:hover{
+    cursor: pointer;
+    background-color: #8b55ff;
 }

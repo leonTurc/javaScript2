@@ -6,14 +6,14 @@ export function Botoes({ val }) {
 
   return (
     <div id="btns">
-      <p id="valor">{val}</p>
+      <p id="valor">R$<span id="val2">{val}</span></p>
       <div id="maisMenos">
-        <button onClick={() => setCount(count - 1)}> - </button>
+        <button className="butao" onClick={() => setCount(count - 1)}> - </button>
         <p>{count}</p>
-        <button onClick={() => setCount(count + 1)}> + </button>
+        <button className="butao" onClick={() => setCount(count + 1)}> + </button>
       </div>
       <button type="submit" id="compra">
-        <img src="src/img/compras.png" alt="carrinho de compras" />
+        <img src="src/img/market.png" alt="carrinho de compras" />
       </button>
     </div>
   );
