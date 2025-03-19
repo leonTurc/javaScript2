@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  /* dark mode */
+  --text-dark: #ffffff;
+  --stroke-dark: rgba(255, 255, 255, 0.5);
+  --surface-dark: rgba(255, 255, 255, 0.1);
+  --surface-dark-hover: rgba(255, 255, 255, 0.05);
+  --highlight-dark: rgba(255, 255, 255, 0.2);
+
+  /* light mode */
+  --text-light: #000000;
+  --stroke-light: rgba(0, 0, 0, 0.5);
+  --surface-light: rgba(0, 0, 0, 0.05);
+  --surface-light-hover: rgba(0, 0, 0, 0.02);
+  --highlight-light: rgba(0, 0, 0, 0.1);
+
+  --text-md: 16px/24 500;
+  --text-sm: 14px/24 400;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: url("./assets/img/bg-desktop.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile img {
+  border-radius: 100%;
+  width: 112px;
+  height: 112px;
+  border: 2px solid var(--stroke-dark);
+}
+
+.profile p {
+  color: var(--text-dark);
+  font: var(--text-md);
+}
+
+.toggle-container {
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-dark);
+  border-radius: 999px;
+  border-color: 1px, solid, var(--stroke-dark);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+  margin: 24px 0;
+}
+
+.toggle-switch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--text-dark);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
