@@ -1,4 +1,4 @@
-import { MoonStars } from "@phosphor-icons/react";
+import { Moon } from "@phosphor-icons/react";
 import alessandroChan from "./assets/img/alessandro-chan.jpg";
 import { ButtonLink } from "./components/buttons";
 import {
@@ -17,7 +17,7 @@ export function App() {
       </div>
       <div className="toggle-container">
         <div className="toggle-switch dark">
-          <MoonStars size={16} />
+          <Moon size={16} />
         </div>
       </div>
       <div className="links">
