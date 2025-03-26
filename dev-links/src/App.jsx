@@ -1,23 +1,44 @@
-import { Moon } from "@phosphor-icons/react";
-import alessandroChan from "./assets/img/alessandro-chan.jpg";
 import { ButtonLink } from "./components/buttons";
 import {
+  Moon,
+  Sun,
   GithubLogo,
   YoutubeLogo,
   LinkedinLogo,
   InstagramLogo,
 } from "@phosphor-icons/react";
 
+import { api } from "./services/api";
+import { useEffect, useState } from "react";
+import { useTheme } from "./context/themeContext";
+
 export function App() {
+  const { theme, toggleTheme } = useTheme();
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    async function getUserData() {
+      try {
+        const response = await api.get("/users/leonTurc");
+        console.log(response);
+        setUser(response.data);
+      } catch (error) {
+        console.log("erro ao buscar dados do fodendo usuario", error);
+      }
+    }
+
+    getUserData();
+  }, []);
+
   return (
-    <div className="container">
+    <div className={`container ${theme}`}>
       <div className="profile">
-        <img src={alessandroChan} alt="" />
-        <p>@AlessandroCaminhões-chan</p>
+        <img src={user.avatar_url} alt="" />
+        <p>@{user.login}</p>
       </div>
-      <div className="toggle-container">
+      <div className="toggle-container" onClick={toggleTheme}>
         <div className="toggle-switch dark">
-          <Moon size={16} />
+          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
         </div>
       </div>
       <div className="links">
@@ -27,10 +48,18 @@ export function App() {
         <ButtonLink name="conheça o explorer" link="" />
       </div>
       <div className="midia">
-        <GithubLogo size={24}/>
-        <InstagramLogo size={24}/>
-        <YoutubeLogo size={24}/>
-        <LinkedinLogo size={24}/>
+        <a href="https://github.com/leonTurc">
+        <GithubLogo size={24} />
+        </a>
+        <a href="https://www.instagram.com">
+        <InstagramLogo size={24} />
+        </a>
+        <a href="https://www.youtube.com">
+        <YoutubeLogo size={24} />
+        </a>
+        <a href="https://www.linkedin.com/">
+        <LinkedinLogo size={24} />
+        </a>
       </div>
     </div>
   );

@@ -27,11 +27,19 @@
 .container {
   width: 100vw;
   height: 100vh;
-  background: url("./assets/img/bg-dark.png") center/cover no-repeat;
+  background: url("./assets/img/bg-dark.jpeg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
+}
+
+.container.dark {
+  background: url("./assets/img/bg-dark.jpeg") center/cover no-repeat;
+}
+
+.container.light {
+  background: url("./assets/img/bg-light.jpeg") center/cover no-repeat;
 }
 
 .profile {
@@ -41,24 +49,50 @@
   gap: 8px;
 }
 
-.profile img {
+.dark .profile img {
   border-radius: 100%;
   width: 112px;
   height: 112px;
   border: 2px solid var(--stroke-dark);
 }
 
-.profile p {
+.light .profile img{
+  border-radius: 100%;
+  width: 112px;
+  height: 112px;
+  border: 2px solid var(--stroke-light);
+}
+
+.dark .profile p {
   color: var(--text-dark);
   font: var(--text-md);
 }
 
-.toggle-container {
+.light .profile p{
+  color: var(--text-light);
+  font: var(--text-md);
+}
+
+.dark .toggle-container {
   width: 64px;
   height: 24px;
   background-color: var(--surface-dark);
   border-radius: 999px;
   border-color: 1px, solid, var(--stroke-dark);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+  margin: 24px 0;
+}
+
+.light .toggle-container {
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-light);
+  border-radius: 999px;
+  border-color: 1px, solid, var(--stroke-light);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -81,15 +115,33 @@
   justify-content: center;
   transition: transform 0.3s ease-in-out;
 }
+.light .toggle-switch {
+  transform: translateY(-50%) translateX(31px);
+}
 
-.links {
+.dark .links {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.midia{
+.light .links {
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dark .midia{
   color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 37px;
+}
+
+.light .midia{
+  color: var(--stroke-light);
   display: flex;
   justify-content: center;
   margin-top: 24px;

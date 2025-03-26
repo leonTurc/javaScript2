@@ -1,4 +1,4 @@
-.button-link {
+.dark .button-link {
   text-decoration: none;
   width: 540px;
   height: 56px;
@@ -12,6 +12,24 @@
   font: var(--text-md);
 }
 
-.button-link:hover {
+.light .button-link {
+  text-decoration: none;
+  width: 540px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-light);
+  background-color: var(--surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font: var(--text-md);
+}
+
+.dark .button-link:hover {
   border: 1px solid var(--text-dark);
+}
+
+.light .button-link:hover {
+  border: 1px solid var(--text-light);
 }
