@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  line-height: 160%;
+  background: var(--background-gray);
+  color: var(--text-gray);
+}
+
+:root{
+  --green: #00875f;
+  --green-light: #00b37e;
+  --background-gray: #121214;
+  --cards-gray: #202024;
+  --divider-gray: #323238;
+  --placeholder-gray: #7c7c8a;
+  --text-apoio-gray: #8d8d99;
+  --text-gray: #c4c4cc;
+  --text-title-gra: #e1e1e6;
+  --white: #ffffff;
+  --red-danger: #f75a68;
+
+  --title-xs: 12px;
+  --title-xm: 14px;
+  --title-xg: 16px;
+}
